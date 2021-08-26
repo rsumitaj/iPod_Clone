@@ -1,0 +1,48 @@
+.wheel-container{
+  background-color: lightgray;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  top: 200px;
+  left: 500px;
+  display: flex;
+}
+
+.wheel{
+  background-color: white;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.centerButton{
+  background-color: lightgray;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: relative;
+  left: 30%;
+  top: -6%;
+}
+.control{
+  color: gray;
+  position: relative;
+}
+#forward{
+  top: 35%;
+  left:80%
+}
+#reverse{
+  top: 15%;
+  left: 10%;
+}
+#menu{
+  top: 12%;
+  left: 40%;
+}
+#play-pause{
+  top: 60%;
+  left:45%;
+}
