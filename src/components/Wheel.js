@@ -1,7 +1,12 @@
 import React from 'react';
 import '../css/Wheel.css';
+import ZingTouch from 'zingtouch';
 
 class Wheel extends React.Component {
+  constructor () {
+    super();
+    this.angel = 0;
+  }
 
   render(){
     return(
@@ -26,6 +31,26 @@ class Wheel extends React.Component {
       </div>
     )
   }
+
+  actionTaken = (e) => {
+    console.log(this.angle);
+
+    if(e.detail.distanceFromOrigin===0){
+      this.angle = e.detail.angle;
+    }
+
+  }
+
+  componentDidMount(){
+    var actionTaken = this.actionTaken;
+    const wheel = document.getElementById('wheel');
+    const activeRegion = new ZingTouch.Region(wheel);
+
+    activeRegion.bind(wheel,'rotate',function(e){
+      actionTaken(e);
+    });
+  }
+
 }
 
 export default Wheel ;
