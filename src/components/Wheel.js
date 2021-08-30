@@ -33,12 +33,10 @@ class Wheel extends React.Component {
   }
 
   actionTaken = (e) => {
-    console.log(this.angle);
-
-    if(e.detail.distanceFromOrigin===0){
-      this.angle = e.detail.angle;
-    }
-
+        console.log(this.angle);
+        if(e.detail.distanceFromOrigin===0){
+            this.angle = e.detail.angle;
+        }
   }
 
   componentDidMount(){

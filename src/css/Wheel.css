@@ -2,9 +2,7 @@
   background-color: lightgray;
   width: 200px;
   height: 200px;
-  position: relative;
-  top: 200px;
-  left: 500px;
+  margin-top: 20px;
   display: flex;
 }
 
