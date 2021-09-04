@@ -1,23 +1,20 @@
 import React from 'react';
 import '../css/Screen.css';
+import Menu from '../components/Menu';
 
 class Screen extends React.Component {
 
   render(){
-    const {active} = this.props;
+    const { active , currentMenu } = this.props;
     return(
-
+      
       <div className="display">
-                <div className="menu">
-                    <ul>
-                        {active===1?<li className="active">Home</li>:<li>Home</li>}
-                        {active===2?<li className="active">Songs</li>:<li>Songs</li>}
-                        {active===3?<li className="active">Games</li>:<li>Games</li>}
-                        {active===4?<li className="active">Settings</li>:<li>Settings</li>}
-                    </ul>
-                </div>
-
-            </div>
+                {currentMenu===0&&<Menu active={active}/>}
+                {currentMenu===1&&<div className="blank-div"><h1> Home </h1> </div>}
+                {currentMenu===2&&<div className="blank-div"><h1>Songs</h1> </div>}
+                {currentMenu===3&&<div className="blank-div"><h1>Games</h1></div>}
+                {currentMenu===4&&<div className="blank-div"><h1>Settings</h1></div>}
+      </div>
     );
   }
 

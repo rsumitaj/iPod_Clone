@@ -9,11 +9,12 @@ class Wheel extends React.Component {
   }
 
   render(){
+    const {changeMenu,active} = this.props;
     return(
       <div className="wheel-container" id="wheel-container">
         <div className="wheel" id="wheel">
           <div className="control" id="menu">
-            <div>MENU</div>
+            <div onClick={()=>{changeMenu(0)}}>MENU</div>
           </div>
           <div className="control" id="forward">
             <i className="fas fa-fast-forward"></i>
@@ -26,26 +27,58 @@ class Wheel extends React.Component {
             <i className="fas fa-fast-backward"></i>
           </div>
 
-          <div className="centerButton" id="centerButton"></div>
+          <div className="centerButton" id="centerButton" onClick={()=>{changeMenu(active)}}></div>
         </div>
       </div>
     )
   }
 
-  actionTaken = (e) => {
-        console.log(this.angle);
-        if(e.detail.distanceFromOrigin===0){
-            this.angle = e.detail.angle;
-        }
+  wheelAction = (e) =>{ 
+    const {updateActiveMenu, currentMenu} = this.props;
+    if(currentMenu!==0){
+        return;
+    }
+    if(e.detail.distanceFromOrigin===0){
+        this.angle = e.detail.angle;
+    }
+    if (Math.abs(this.angle - e.detail.angle) > 300) {
+      this.angle = Math.abs(e.detail.angle);
+      if (e.detail.distanceFromLast === 0) {
+          return;
+      }
+      else if (e.detail.distanceFromLast < 0) {
+          updateActiveMenu(1, currentMenu);
+      } else {
+          updateActiveMenu(0, currentMenu);
+      }
+
+  } else if (Math.abs(this.angle - e.detail.angle) > 15) {
+      this.angle = Math.abs(e.detail.angle);
+      if (e.detail.distanceFromLast === 0) {
+          return;
+      }
+      else if (e.detail.distanceFromLast > 0) {
+          updateActiveMenu(1, currentMenu);
+      } else {
+          updateActiveMenu(0, currentMenu);
+      }
+
+  }
   }
 
   componentDidMount(){
-    var actionTaken = this.actionTaken;
+    const{changeMenu}=this.props;
+    const wheelAction = this.wheelAction;
     const wheel = document.getElementById('wheel');
     const activeRegion = new ZingTouch.Region(wheel);
+    const menuButton = document.getElementById("menu");
+
+    activeRegion.bind(menuButton, 'tap', function (e) {
+        changeMenu(0);
+    });
 
     activeRegion.bind(wheel,'rotate',function(e){
-      actionTaken(e);
+      wheelAction(e);
     });
   }
 
