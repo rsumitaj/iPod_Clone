@@ -11,9 +11,11 @@ class Wheel extends React.Component {
   render(){
     const {changeMenu,active} = this.props;
     return(
+      //  all the html to make the wheel structure
       <div className="wheel-container" id="wheel-container">
         <div className="wheel" id="wheel">
           <div className="control" id="menu">
+            {/* click even on menu button to go back */}
             <div onClick={()=>{changeMenu(0)}}>MENU</div>
           </div>
           <div className="control" id="forward">
@@ -33,6 +35,7 @@ class Wheel extends React.Component {
     )
   }
 
+  // function to be called in the zingtouch active region to move wheel
   wheelAction = (e) =>{ 
     const {updateActiveMenu, currentMenu} = this.props;
     if(currentMenu!==0){
@@ -66,6 +69,8 @@ class Wheel extends React.Component {
   }
   }
 
+  // updating changes that comes as a result of rotation of wheel
+  
   componentDidMount(){
     const{changeMenu}=this.props;
     const wheelAction = this.wheelAction;

@@ -7,7 +7,7 @@ class Games extends React.Component {
     
     return (
       <div className="games">
-        <img src={game} />
+        <img src={game} alt="Games" />
       </div>
     );
   }

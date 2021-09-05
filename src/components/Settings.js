@@ -8,7 +8,7 @@ class Settings extends React.Component {
     
     return (
       <div className="settings">
-        <img src={settings} />
+        <img src={settings} alt="Settings" />
       </div>
     );
   }

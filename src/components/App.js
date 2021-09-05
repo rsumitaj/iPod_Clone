@@ -11,6 +11,7 @@ class App extends React.Component {
     }
   }
 
+    // function to move over menu using wheel
   updateActiveMenu = (direction) => {
     if (direction === 1) {
       if (this.state.active === 4) {
@@ -26,11 +27,12 @@ class App extends React.Component {
       }
     }
   }
-
+  // adding function to menu button
   changeMenu=(id)=>{
     this.setState({currentMenu:id});
   }
   
+  // render components 
   render() {
     const { active, currentMenu } = this.state;
     return (

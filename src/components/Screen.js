@@ -8,6 +8,7 @@ import Settings from '../components/Settings';
 
 class Screen extends React.Component {
 
+  // rendering different menu items from differnt components
   render(){
     const { active , currentMenu} = this.props;
     return(

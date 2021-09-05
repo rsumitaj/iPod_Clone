@@ -12,6 +12,7 @@ class Menu extends React.Component {
 
             <div className="menu-container">
                 <div className="menu">
+                     {/* showing active item with different bg color and rest of the items with the same  */}
                     <ul>
                         {active === 1 ? <li className="active">&nbsp;Home</li> : <li>&nbsp;Home</li>}
                         {active === 2 ? <li className="active">&nbsp;Songs</li> : <li>&nbsp;Songs</li>}
@@ -19,6 +20,7 @@ class Menu extends React.Component {
                         {active === 4 ? <li className="active">&nbsp;Settings</li> : <li>&nbsp;Settings</li>}
                     </ul>
                 </div>
+                {/* changes show on the right screen as the active item changes */}
                 <div className="rightScreen">
                     {active === 1 && <img className="rightScreen-img" src={home} alt="Home"></img>}
                     {active === 2 && <img className="rightScreen-img" src={songs} alt="Songs"></img>}

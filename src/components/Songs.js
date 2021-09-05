@@ -5,12 +5,13 @@ import artist from '../static/artist.jpeg';
 import songs from '../static/songs.jpeg';
 
 class Songs extends React.Component {
-
+  
   render() {
     const { active } = this.props;
     return (
       <div className="songs">
                 <div className="songs-menu">
+                  {/* same as the main menu item showing daughter menu of songs item */}
                     <ul>
                         {active === 1 ? <li className="active">&nbsp;Playing</li> : <li>&nbsp;Playing</li>}
                         {active === 2 ? <li className="active">&nbsp;Artists</li> : <li>&nbsp;Artists</li>}
