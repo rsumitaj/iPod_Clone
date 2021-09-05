@@ -1,6 +1,10 @@
 import React from 'react';
 import '../css/Screen.css';
 import Menu from '../components/Menu';
+import Home from '../components/Home';
+import Songs from '../components/Songs';
+import Games from '../components/Games';
+import Settings from '../components/Settings';
 
 class Screen extends React.Component {
 
@@ -10,10 +14,11 @@ class Screen extends React.Component {
       
       <div className="display">
                 {currentMenu===0&&<Menu active={active}/>}
-                {currentMenu===1&&<div className="blank-div"><h1> Home </h1> </div>}
-                {currentMenu===2&&<div className="blank-div"><h1>Songs</h1> </div>}
-                {currentMenu===3&&<div className="blank-div"><h1>Games</h1></div>}
-                {currentMenu===4&&<div className="blank-div"><h1>Settings</h1></div>}
+                {currentMenu===1&&<Home />}
+                {currentMenu===2&&<Songs />}
+                {currentMenu===3&&<Games />}
+                {currentMenu===4&&<Settings />}
+                
       </div>
     );
   }
