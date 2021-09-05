@@ -9,16 +9,15 @@ import Settings from '../components/Settings';
 class Screen extends React.Component {
 
   render(){
-    const { active , currentMenu } = this.props;
+    const { active , currentMenu} = this.props;
     return(
       
       <div className="display">
                 {currentMenu===0&&<Menu active={active}/>}
                 {currentMenu===1&&<Home />}
-                {currentMenu===2&&<Songs />}
+                {currentMenu===2&& <Songs active={active-1} currentMenu={currentMenu} />}
                 {currentMenu===3&&<Games />}
                 {currentMenu===4&&<Settings />}
-                
       </div>
     );
   }

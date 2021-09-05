@@ -1,4 +1,5 @@
 import React from 'react';
+import game from "../static/game.png";
 
 class Games extends React.Component {
   
@@ -6,7 +7,7 @@ class Games extends React.Component {
     
     return (
       <div className="games">
-        <h1>In the game menu</h1>
+        <img src={game} />
       </div>
     );
   }

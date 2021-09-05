@@ -1,19 +1,10 @@
-.menu-container{
+.songs{
   display: flex;
-
 }
-
-.menu{
+.songs-menu{
   background-color: #d3d5d6;
   height: 100%;
   width: 120px;
-}
-
-
-h3{
-  text-align: center;
-  margin: 0px;
-  padding: 0px;
 }
 
 ul{
@@ -40,6 +31,6 @@ li{
 }
 
 .rightScreen-img{
-  height: 190px;
-  width: 150px;
+  height: 200px;
+  width: 160px;
 } 

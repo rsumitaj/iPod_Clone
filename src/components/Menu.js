@@ -1,9 +1,9 @@
 import React from 'react';
 import "../css/Menu.css";
-import game from "../static/game.png"
-import songs from "../static/songs.jpeg"
-import settings from "../static/settings.jpeg"
-import home from "../static/home.jpeg"
+import game from "../static/game.png";
+import songs from "../static/songs.jpeg";
+import settings from "../static/settings.jpeg";
+import home from "../static/home.jpeg";
 
 class Menu extends React.Component {
     render() {

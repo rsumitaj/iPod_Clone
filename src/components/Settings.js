@@ -1,4 +1,6 @@
 import React from 'react';
+import settings from "../static/settings.jpeg"
+import '../css/Settings.css';
 
 class Settings extends React.Component {
 
@@ -6,7 +8,7 @@ class Settings extends React.Component {
     
     return (
       <div className="settings">
-        <h1>In the setting menu</h1>
+        <img src={settings} />
       </div>
     );
   }
